@@ -1,0 +1,76 @@
+@media screen and (min-width:768px){
+    .navAlign{
+        position: absolute;
+        right: 50px;
+    }
+
+    .welcomeText{
+        font-size: 3em !important;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .welcomeText{
+        font-size: 4em !important;
+    }
+}
+
+.inactive{
+    color:#06283D !important;
+}
+
+.active{
+    color:#1EAE98 !important;
+}
+
+.open-block-background{
+    background: linear-gradient(to right ,#aceec5 , #e7eefa);
+    border-radius: 0 0 30px 30px;
+}
+
+.orange{
+    background-color: #f86d2d;
+}
+
+.btns{
+    transition: 0.2s ease-in-out;
+}
+
+.btns:hover{
+    background-color: #06283D;
+    transform: translateX(10px);
+}
+
+.sectionText > span{
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.sectionText:hover > span{
+    opacity: 1;
+}
+
+.skillArea .circles, 
+.skillArea .circles svg,
+.skillArea .circles svg circle{
+    width: 160px;
+    height: 160px;
+}
+
+.skillArea .circles svg{
+    transform: rotateZ(-90deg);
+}
+
+.skillArea .circles svg circle{
+    fill: none;
+    stroke-width: 15px;
+    stroke: #0096FF;
+    transform: translate(10px,10px);
+    stroke-dasharray: 440;
+    stroke-linecap: round;
+    
+}
+
+.skill-background{
+    background:radial-gradient( #EFF5F520 , #EAEAEA20);
+}
