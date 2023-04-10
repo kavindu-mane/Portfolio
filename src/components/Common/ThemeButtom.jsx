@@ -12,15 +12,15 @@ const themeBtnClick = () => {
 };
 
 const themeRestore = () => {
-  timeOut = setTimeout(() => { 
-  const themeClasses = document.getElementById("theme-btn").classList;
-  if (themeClasses.contains("-translate-x-11")) {
-    themeClasses.remove("-translate-x-11");
-    document
-      .getElementById("theme-setting-btn")
-      .classList.add("-translate-x-11");
-  }
-} , 10000);
+  timeOut = setTimeout(() => {
+    const themeClasses = document.getElementById("theme-btn").classList;
+    if (themeClasses.contains("-translate-x-11")) {
+      themeClasses.remove("-translate-x-11");
+      document
+        .getElementById("theme-setting-btn")
+        .classList.add("-translate-x-11");
+    }
+  }, 10000);
 };
 
 const themeSet = () => {

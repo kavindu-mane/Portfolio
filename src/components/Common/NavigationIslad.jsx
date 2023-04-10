@@ -1,5 +1,6 @@
 import React from "react";
-import NavigationIcon from "./NavigationIcon";
+
+let timeOut;
 
 const navigationBtnClick = () => {
   document.getElementById("nav-btn").classList.add("translate-x-11");
@@ -8,13 +9,35 @@ const navigationBtnClick = () => {
 };
 
 const navigationRestore = () => {
-  setTimeout(() => {
+  timeOut = setTimeout(() => {
     const navClasses = document.getElementById("nav-btn").classList;
     if (navClasses.contains("translate-x-11")) {
       navClasses.remove("translate-x-11");
       document.getElementById("nav-select-btn").classList.add("translate-x-11");
     }
   }, 10000);
+};
+
+const setCurrentPage = (value) => {
+  const url = window.location.href;
+  return url.split("/").pop() === value
+    ? " bg-orange-500 rounded-md"
+    : " dark:text-slate-800";
+};
+
+const navigationIcon = (link, icon, text) => {
+  return (
+    <span
+      className={
+        "remove-highlight material-symbols-outlined cursor-pointer p-1 text-slate-100" +
+        setCurrentPage(text)
+      }
+      onClick={() => {window.open(link, "_self"); clearTimeout(timeOut)}}
+      key = {icon}
+    >
+      {icon}
+    </span>
+  );
 };
 
 const NavigationIsland = () => {
@@ -79,12 +102,7 @@ const NavigationIsland = () => {
       >
         {pages.map((page) => {
           return (
-            <NavigationIcon
-              icon={page.icon}
-              link={page.link}
-              text={page.text}
-              key={page.icon}
-            />
+            navigationIcon(page.link , page.icon , page.text)
           );
         })}
       </div>
