@@ -25,6 +25,13 @@ const setCurrentPage = (value) => {
     : " dark:text-slate-800";
 };
 
+const navigated = (link) => {
+  document.getElementById("nav-btn").classList.remove("translate-x-11");
+  document.getElementById("nav-select-btn").classList.add("translate-x-11");
+  clearTimeout(timeOut);
+  window.open(link, "_self");
+};
+
 const navigationIcon = (link, icon, text) => {
   return (
     <span
@@ -32,8 +39,8 @@ const navigationIcon = (link, icon, text) => {
         "remove-highlight material-symbols-outlined cursor-pointer p-1 text-slate-100" +
         setCurrentPage(text)
       }
-      onClick={() => {window.open(link, "_self"); clearTimeout(timeOut)}}
-      key = {icon}
+      onClick={() => navigated(link)}
+      key={icon}
     >
       {icon}
     </span>
@@ -79,7 +86,7 @@ const NavigationIsland = () => {
       }
     });
 
-    return currentIcon
+    return currentIcon;
   };
 
   return (
@@ -101,9 +108,7 @@ const NavigationIsland = () => {
         id="nav-select-btn"
       >
         {pages.map((page) => {
-          return (
-            navigationIcon(page.link , page.icon , page.text)
-          );
+          return navigationIcon(page.link, page.icon, page.text);
         })}
       </div>
     </React.Fragment>
