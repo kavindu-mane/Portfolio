@@ -46,9 +46,18 @@ const NavigationIsland = () => {
     },
   ];
 
-  // const currentPage = () => {
+  const currentPage = () => {
+    let currentIcon;
+    const url = window.location.href;
+    pages.forEach((page) => {
+      if ("/" + url.split("/").pop() === page.link) {
+        currentIcon = page.icon;
+        return;
+      }
+    });
 
-  // }
+    return currentIcon
+  };
 
   return (
     <React.Fragment>
@@ -59,9 +68,11 @@ const NavigationIsland = () => {
         onClick={() => navigationBtnClick()}
       >
         <span className="material-symbols-outlined text-slate-100 dark:text-slate-800">
-          {"home"}
+          {currentPage()}
         </span>
       </div>
+
+      {currentPage()}
 
       <div
         className="fixed bottom-7 right-0 z-50 flex h-52 w-11 translate-x-11 flex-col justify-between rounded-l-xl
