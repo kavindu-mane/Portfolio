@@ -11,7 +11,10 @@ const NavigationIcon = ({link, icon , text}) => {
   return (
     <React.Fragment>
       <span
-        className={"material-symbols-outlined cursor-pointer p-1 font-bold text-slate-100" + setCurrentPage(text)}
+        className={
+          "remove-highlight material-symbols-outlined cursor-pointer p-1 font-bold text-slate-100" +
+          setCurrentPage(text)
+        }
         onClick={() => window.open(link, "_self")}
       >
         {icon}

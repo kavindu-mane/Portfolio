@@ -10,3 +10,7 @@
     @apply overflow-x-hidden
   }
 }
+
+.remove-highlight{
+  -webkit-tap-highlight-color: transparent;
+}

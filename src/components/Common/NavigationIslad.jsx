@@ -49,8 +49,8 @@ const NavigationIsland = () => {
   return (
     <React.Fragment>
       <div
-        className="fixed bottom-28 right-0 z-50 flex h-10 w-11 cursor-pointer items-center rounded-l-full
-            bg-slate-800 pe-2 justify-end drop-shadow-md duration-300 ease-in dark:bg-slate-100"
+        className="remove-highlight fixed bottom-28 right-0 z-50 flex h-10 w-11 cursor-pointer items-center
+            justify-end rounded-l-full bg-slate-800 pe-2 drop-shadow-md duration-300 ease-in dark:bg-slate-100"
         id="nav-btn"
         onClick={() => navigationBtnClick()}
       >

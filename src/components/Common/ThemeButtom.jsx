@@ -73,7 +73,7 @@ const ThemeButton = () => {
     return (
       <span
         className={
-          "material-symbols-outlined cursor-pointer p-1 text-slate-100" +
+          "remove-highlight material-symbols-outlined cursor-pointer p-1 text-slate-100" +
           selectedTheme(icon, currentTheme)
         }
         onClick={() => themeSettingBtnClick(icon, setCurrentTheme)}
@@ -88,8 +88,8 @@ const ThemeButton = () => {
   return (
     <React.Fragment>
       <div
-        className="fixed bottom-28 left-0 z-50 flex h-10 w-11 cursor-pointer items-center rounded-r-full
-            bg-slate-800 ps-2 drop-shadow-md duration-300 ease-in dark:bg-slate-100"
+        className="remove-highlight fixed bottom-28 left-0 z-50 flex h-10 w-11 cursor-pointer items-center
+            rounded-r-full bg-slate-800 ps-2 drop-shadow-md duration-300 ease-in dark:bg-slate-100 "
         id="theme-btn"
         onClick={() => themeBtnClick()}
       >
