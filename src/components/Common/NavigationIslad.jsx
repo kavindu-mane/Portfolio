@@ -72,8 +72,6 @@ const NavigationIsland = () => {
         </span>
       </div>
 
-      {currentPage()}
-
       <div
         className="fixed bottom-7 right-0 z-50 flex h-52 w-11 translate-x-11 flex-col justify-between rounded-l-xl
       bg-slate-800 py-1 pe-1 ps-2 drop-shadow-2xl duration-300 ease-in dark:bg-slate-100"

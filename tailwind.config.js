@@ -16,6 +16,7 @@ module.exports = {
     fontFamily: {
       satisfy: ["Satisfy", "cursive"],
       kurale: ["Kurale", "serif"],
+      alkatra:["Alkatra" , "cursive"]
     },
   },
   plugins: [],
