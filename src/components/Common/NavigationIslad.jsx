@@ -46,6 +46,10 @@ const NavigationIsland = () => {
     },
   ];
 
+  const currentPage = () => {
+    
+  }
+
   return (
     <React.Fragment>
       <div
