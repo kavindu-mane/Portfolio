@@ -56,16 +56,16 @@ const ReactProgressBar = () => {
         <LogoArea />
 
         {/*  download with npm */}
-        <h2 className="mt-10 w-[22.5rem] text-left text-lg italic md:w-[30rem]">
+        <h2 className="mt-10 w-[20.5rem] text-left text-lg italic md:w-[30rem]">
           Download with npm
         </h2>
-        <div className="mt-3 flex items-center justify-between rounded-xl border-2 bg-slate-50 py-1 md:w-[30rem]">
+        <div className="mt-3 flex items-center justify-between rounded-md border-2 bg-slate-50 py-1 md:w-[30rem]">
           <SyntaxHighlighter
             language={"bash"}
             style={atomOneLight}
             customStyle={{
               marginLeft: "5px",
-              width: "20rem",
+              width: "18rem",
             }}
             wrapLongLines={true}
           >
