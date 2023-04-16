@@ -1,9 +1,12 @@
 import React from "react";
+import BasicPageStructure from "../components/BasicPageStructure/BasicPageStructure";
 
 const About = () => {
   return (
     <React.Fragment>
-      <h1 className="mt-24">About</h1>
+      <BasicPageStructure>
+        <h1 className="mt-24">About</h1>
+      </BasicPageStructure>
     </React.Fragment>
   );
 };

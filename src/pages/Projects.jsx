@@ -1,9 +1,15 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import ReactProgressBar from "../components/Projects/ReactProgressBar/ReactProgressBar";
+import Base from "../components/Projects/Base";
 
 const Projects = () => {
   return (
     <React.Fragment>
-      <h1 className="mt-24">Projects</h1>
+      <Routes>
+        <Route path="/react-percentage-bar" element={<ReactProgressBar />} />
+        <Route path="/" element={<Base />} />
+      </Routes>
     </React.Fragment>
   );
 };

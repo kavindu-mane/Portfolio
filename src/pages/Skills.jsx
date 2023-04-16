@@ -1,9 +1,12 @@
 import React from "react";
+import BasicPageStructure from "../components/BasicPageStructure/BasicPageStructure";
 
 const Skills = () => {
   return (
     <React.Fragment>
-      <h1 className="mt-24">Skills</h1>
+      <BasicPageStructure>
+        <h1 className="mt-24">Skills</h1>
+      </BasicPageStructure>
     </React.Fragment>
   );
 };

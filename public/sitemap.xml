@@ -30,4 +30,10 @@
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.kavindu.me/projects/react-percentage-bar</loc>
+    <lastmod>2023-04-16</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
