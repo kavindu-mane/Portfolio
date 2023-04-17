@@ -8,7 +8,7 @@ const Base = () => {
     return (
       <React.Fragment>
         <BasicPageStructure>
-          <div className="mx-2 my-20 grid gap-4 md:grid-cols-2 justify-items-center">
+          <div className="mx-2 my-32 grid gap-4 lg:grid-cols-2 justify-items-center sm:mx-5 md:mx-8">
             <Card
               imgLink={"https://createme.kavindu.me/logo192.png"}
               name={"CreateME"}
@@ -23,7 +23,7 @@ const Base = () => {
               imgLink={rpb}
               name={"React Percentage Bar"}
               description={
-                "React Percentage Bar is more Customizable and Circular progress and percentage bar for react apps"
+                "React Percentage Bar is more Customizable Circular and Linear percentage progress bar for react apps."
               }
               link={"http://kavindu.me/projects/react-percentage-bar"}
               githubLink={

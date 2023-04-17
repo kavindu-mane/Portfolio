@@ -3,8 +3,10 @@ import React from "react";
 const Card = ({ imgLink, name, description, link, githubLink }) => {
   return (
     <React.Fragment>
-      <div className="min-w-[25rem] rounded-lg border-[1px] border-slate-300 bg-emerald-100 p-4 shadow-md shadow-slate-300 dark:border-slate-500 dark:bg-slate-700
-       dark:shadow-slate-700 flex flex-col justify-between max-w-[40rem]">
+      <div
+        className="flex h-full min-w-[25rem] max-w-[40rem] flex-col justify-between rounded-lg border-[1px] border-slate-300 bg-emerald-100 p-4
+       shadow-md shadow-slate-300 odd:place-self-end even:place-self-start dark:border-slate-500 dark:bg-slate-700 dark:shadow-slate-700"
+      >
         <div className="flex items-center justify-between">
           <img
             src={imgLink}
@@ -41,6 +43,7 @@ const Card = ({ imgLink, name, description, link, githubLink }) => {
               src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg"
               alt="github"
               width={"20px"}
+              height={"20px"}
               style={{ filter: "invert()" }}
             />
           </a>

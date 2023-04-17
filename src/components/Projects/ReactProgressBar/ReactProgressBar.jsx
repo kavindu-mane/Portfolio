@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+// import SyntaxHighlighter from "react-syntax-highlighter";
+// import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+// import { Helmet } from "react-helmet";
+// const Circular = lazy(() => import ("./Circular"))
+// const LogoArea = lazy(() => import("./LogoArea"));
+// const Linear = lazy(() => import("./Linear"));
+// const favicon = lazy(() => import("./favicon.ico"));
+// const webimg = lazy(() => import("./webimg.png"));
 import Circular from "./Circular";
 import LogoArea from "./LogoArea";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Linear from "./Linear";
 import { Helmet } from "react-helmet";
-import favicon from "./favicon.ico"
-import webimg from "./webimg.png"
+import favicon from "./favicon.ico";
+import webimg from "./webimg.png";
+
 
 const ReactProgressBar = () => {
   const [copy, setCopy] = useState(false);
@@ -49,6 +58,11 @@ const ReactProgressBar = () => {
         />
         <meta property="twitter:image" content={webimg} />
         <title>React Percentage Bar</title>
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kurale&display=swap"
+          rel="stylesheet"
+        />
       </Helmet>
 
       <div className="w-100 flex flex-col items-center bg-white">
@@ -100,6 +114,7 @@ const ReactProgressBar = () => {
             src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg"
             alt="github"
             width={"20px"}
+            height={"20px"}
             style={{ filter: "invert()" }}
           />
           &ensp;Fork me on GitHub
