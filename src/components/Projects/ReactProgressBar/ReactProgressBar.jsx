@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 // import { Helmet } from "react-helmet";
@@ -16,10 +16,10 @@ import { Helmet } from "react-helmet";
 import favicon from "./favicon.ico";
 import webimg from "./webimg.png";
 
-
 const ReactProgressBar = () => {
   const [copy, setCopy] = useState(false);
   const [circular, setCircular] = useState(true);
+  
   return (
     <React.Fragment>
       <Helmet>
@@ -70,7 +70,6 @@ const ReactProgressBar = () => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&display=swap"
         />
-        
       </Helmet>
 
       <div className="w-100 flex flex-col items-center bg-white">
