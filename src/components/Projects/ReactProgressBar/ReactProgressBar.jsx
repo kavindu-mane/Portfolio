@@ -59,10 +59,18 @@ const ReactProgressBar = () => {
         <meta property="twitter:image" content={webimg} />
         <title>React Percentage Bar</title>
 
+        {/* Fonts  */}
         <link
           href="https://fonts.googleapis.com/css2?family=Kurale&display=swap"
           rel="stylesheet"
         />
+
+        {/* Icons  */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&display=swap"
+        />
+        
       </Helmet>
 
       <div className="w-100 flex flex-col items-center bg-white">
