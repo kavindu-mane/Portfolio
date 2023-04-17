@@ -52,6 +52,18 @@ class App extends Component {
             property="twitter:image"
             content="https://www.kavindu.me/webimg.png"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Kurale&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap"
+            rel="stylesheet"
+          />
           <title>Kavindu Manahara</title>
         </Helmet>
         <Router>
