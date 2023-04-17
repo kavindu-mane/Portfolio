@@ -19,7 +19,7 @@ const ReactProgressBar = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="React Percentage Bar | Customizable and Circular progress and percentage bar for react apps"
+          content="React Percentage Bar | Customizable Circular and Linear percentage progress bar for react apps"
         />
         <meta name="title" content="React Percentage Bar" />
         <meta name="copyright" content="Kavindu Manahara" />
@@ -32,7 +32,7 @@ const ReactProgressBar = () => {
         <meta property="og:title" content="React Percentage Bar" />
         <meta
           property="og:description"
-          content="React Percentage Bar | Customizable and Circular progress and percentage bar for react apps"
+          content="React Percentage Bar | Customizable Circular and Linear percentage progress bar for react apps"
         />
         <meta property="og:image" itemprop="image" content={webimg} />
 
@@ -45,7 +45,7 @@ const ReactProgressBar = () => {
         <meta name="twitter:title" content="React Percentage Bar" />
         <meta
           name="twitter:description"
-          content="React Percentage Bar | Customizable and Circular progress and percentage bar for react apps"
+          content="React Percentage Bar | Customizable Circular and Linear percentage progress bar for react apps"
         />
         <meta property="twitter:image" content={webimg} />
         <title>React Percentage Bar</title>
