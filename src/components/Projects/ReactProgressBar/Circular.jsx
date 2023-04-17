@@ -649,7 +649,7 @@ const Circular = () => {
         </Card>
       </div>
 
-      <h1 className={" my-10 text-3xl"}>Advance Usage</h1>
+      <h1 className={(length >= 4 ? "block" : "hidden") + " my-10 text-3xl"}>Advance Usage</h1>
       <div className="grid gap-4 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
         <Card
           current={length}
