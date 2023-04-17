@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState ,lazy } from "react";
 import { LinearProgressBar } from "react-percentage-bar";
-import Card from "./Card";
-import MultipleObserver from "./MultipleObserver";
+const MultipleObserver = lazy(() => import("./MultipleObserver"));
+const Card = lazy(() => import("./Card"));
 
 const codes = {
   default: `<LinearProgressBar />`,

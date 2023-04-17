@@ -11,7 +11,7 @@ const SocialIcons = ({ link, keyword }) => {
           <img
             src={`https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${keyword}.svg`}
             alt={keyword}
-            className="w-[1.2rem] invert group-hover:invert dark:filter-none sm:w-[1.5rem]"
+            className="h-[1.2rem] w-[1.2rem] invert group-hover:invert dark:filter-none sm:h-[1.5rem] sm:w-[1.5rem]"
           />
         </div>
       </a>

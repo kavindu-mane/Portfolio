@@ -1,15 +1,14 @@
 import React from 'react'
 import BasicPageStructure from '../BasicPageStructure/BasicPageStructure';
-import Card from './Card';
+import DetailsCard from './DetailsCard';
 import rpb from "./ReactProgressBar/favicon.ico"
-
 
 const Base = () => {
     return (
       <React.Fragment>
         <BasicPageStructure>
           <div className="mx-2 my-32 grid gap-4 lg:grid-cols-2 justify-items-center sm:mx-5 md:mx-8">
-            <Card
+            <DetailsCard
               imgLink={"https://createme.kavindu.me/logo192.png"}
               name={"CreateME"}
               description={
@@ -19,7 +18,7 @@ const Base = () => {
               githubLink={"https://github.com/kavindu-mane/CreateME"}
             />
 
-            <Card
+            <DetailsCard
               imgLink={rpb}
               name={"React Percentage Bar"}
               description={

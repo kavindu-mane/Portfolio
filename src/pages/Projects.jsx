@@ -1,17 +1,30 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import ReactProgressBar from "../components/Projects/ReactProgressBar/ReactProgressBar";
-import Base from "../components/Projects/Base";
-import Error from "./Error"
+// import ReactProgressBar from "../components/Projects/ReactProgressBar/ReactProgressBar";
+// import Base from "../components/Projects/Base";
+// import Error from "./Error"
+const ReactProgressBar = lazy(() =>
+  import("../components/Projects/ReactProgressBar/ReactProgressBar")
+);
+const Base = lazy(() => import("../components/Projects/Base"));
+const Error = lazy(() => import("./Error"));
 
 const Projects = () => {
   return (
     <React.Fragment>
-      <Routes>
-        <Route path="/react-percentage-bar" element={<ReactProgressBar />} />
-        <Route path="/" element={<Base />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <p className="flex h-screen items-center justify-center text-lg italic">
+            Loading please wait...
+          </p>
+        }
+      >
+        <Routes>
+          <Route path="/react-percentage-bar" element={<ReactProgressBar />} />
+          <Route path="/" element={<Base />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Suspense>
     </React.Fragment>
   );
 };
