@@ -7,7 +7,7 @@ const Card = ({ children, text, title, current, showVal }) => {
     <React.Fragment>
       <Suspense
         fallback={
-          <p className="text-md flex h-screen items-center justify-center italic">
+          <p className="text-md flex h-screen items-center justify-center italic min-w-[15rem]">
             Loading...
           </p>
         }
