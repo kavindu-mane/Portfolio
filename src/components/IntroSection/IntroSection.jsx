@@ -25,7 +25,7 @@ const IntroSection = () => {
           <img
             src={myImage}
             alt="my-pic"
-            className="mb-10 h-[200px] w-[200px] rounded-full border-2 shadow-[0_0_6rem_-5px_#22d3ee] sm:mb-20 sm:h-[300px] sm:w-[300px]"
+            className="mb-10 h-[200px] w-[200px] animate-profileBorder rounded-full border-2 sm:mb-20 sm:h-[300px] sm:w-[300px]"
           />
 
           <h1 className="font-satisfy text-2xl sm:text-3xl md:text-4xl">
