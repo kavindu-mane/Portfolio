@@ -1,4 +1,4 @@
-import React , {lazy ,Suspense} from "react";
+import React, { lazy, Suspense } from "react";
 const CodeArea = lazy(() => import("./CodeArea"));
 const Title = lazy(() => import("./Title"));
 
@@ -7,7 +7,7 @@ const Card = ({ children, text, title, current, showVal }) => {
     <React.Fragment>
       <Suspense
         fallback={
-          <p className="text-md flex h-screen items-center justify-center italic min-w-[15rem]">
+          <p className="text-md flex h-screen max-h-[15rem] min-w-[25rem] items-center justify-center italic">
             Loading...
           </p>
         }
