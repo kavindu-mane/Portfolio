@@ -15,34 +15,24 @@ const ReactProgressBar = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <meta charset="utf-8" />
         <link rel="icon" href={favicon} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
-          name="description"
-          content="React Percentage Bar | Customizable Circular and Linear percentage progress bar for react apps"
-        />
-        <meta name="title" content="React Percentage Bar" />
-        <meta name="copyright" content="Kavindu Manahara" />
-
-        <meta property="og:type" content="website" />
-        <meta
+          name="url"
           property="og:url"
           content="https://www.kavindu.me/projects/react-percentage-bar"
         />
-        <meta property="og:title" content="React Percentage Bar" />
+        <meta name="title" property="og:title" content="React Percentage Bar" />
         <meta
+          name="description"
           property="og:description"
           content="React Percentage Bar | Customizable Circular and Linear percentage progress bar for react apps"
         />
         <meta property="og:image" itemprop="image" content={webimg} />
 
-        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:url"
           content="https://www.kavindu.me/projects/react-percentage-bar"
         />
-        <meta name="twitter:creator" content="@kavindu_mane" />
         <meta name="twitter:title" content="React Percentage Bar" />
         <meta
           name="twitter:description"
@@ -140,10 +130,10 @@ const ReactProgressBar = () => {
           {circular ? <Circular /> : <Linear />}
 
           {/* developer */}
-          <h3 className="mt-10 w-screen bg-slate-700 py-2 text-center font-kurale text-sm italic text-white">
+          <p className="mt-10 w-screen bg-slate-700 py-2 text-center font-kurale text-sm italic text-white">
             <span className="font-bold text-yellow-500">&lt;/&gt;</span>
             &ensp;With&ensp;&#10084;&#65039;&ensp;Kavindu Manahara
-          </h3>
+          </p>
         </div>
       </Suspense>
     </React.Fragment>
