@@ -7,7 +7,7 @@ const Base = () => {
     return (
       <React.Fragment>
         <BasicPageStructure>
-          <div className="mx-2 my-32 grid gap-4 lg:grid-cols-2 justify-items-center sm:mx-5 md:mx-8">
+          <div className="mx-2 my-20 md:my-24 grid gap-4 lg:grid-cols-2 justify-items-center sm:mx-5 md:mx-8">
             <DetailsCard
               imgLink={"https://createme.kavindu.me/logo192.png"}
               name={"CreateME"}
