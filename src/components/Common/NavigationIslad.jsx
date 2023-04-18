@@ -21,7 +21,7 @@ const navigationRestore = () => {
 const setCurrentPage = (value) => {
   const url = window.location.href;
   return url.split("/").pop() === value
-    ? " bg-orange-500 rounded-md"
+    ? " bg-sky-700 rounded-md"
     : " dark:text-slate-800";
 };
 
