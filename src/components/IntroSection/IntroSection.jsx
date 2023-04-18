@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
-import myImage from "../../resources/my-image.webp";
+import myImage from "../../resources/my-image.jpg";
 const TypingText = lazy(() => import("./TypingText"));
-// const myImage = lazy(() => import("../../resources/my-image.webp"));
 const SocialIcons = lazy(() => import("../Common/SocialIcons"));
 const DownloadBtn = lazy(() => import("../Common/DownloadBtn"));
 
@@ -22,15 +21,17 @@ const IntroSection = () => {
           </p>
         }
       >
-        <div className="flex min-h-screen flex-col items-center justify-center py-10">
+        <div className="flex min-h-screen flex-col items-center justify-center overflow-hidden py-14">
           <img
             src={myImage}
             alt="my-pic"
-            className="mb-3 w-80 md:w-[450px] md:h-[450px] sm:w-96"
+            className="mb-10 h-[200px] w-[200px] rounded-full border-2 shadow-[0_0_6rem_-5px_#22d3ee] sm:mb-20 sm:h-[300px] sm:w-[300px]"
           />
+
           <h1 className="font-satisfy text-2xl sm:text-3xl md:text-4xl">
             Kavindu&ensp;Manahara
           </h1>
+
           <TypingText />
           <div className="mt-10 flex w-full justify-center">
             {Object.keys(socilaList).map((key, i) => {
