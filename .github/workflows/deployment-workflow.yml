@@ -18,5 +18,6 @@ jobs:
         with:
           folder: build
           server: ftp.kavindu.me
+          timeout: 300000
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
