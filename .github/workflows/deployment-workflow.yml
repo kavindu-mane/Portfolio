@@ -16,6 +16,7 @@ jobs:
       - name: Deploy 🚀
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
+          folder: build
           server: ftp.kavindu.me
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
