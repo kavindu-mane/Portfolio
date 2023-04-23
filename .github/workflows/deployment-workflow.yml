@@ -16,7 +16,6 @@ jobs:
       - name: Deploy 🚀
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          folder: build
           server: ftp.kavindu.me
           timeout: 300000
           username: ${{ secrets.FTP_USERNAME }}
