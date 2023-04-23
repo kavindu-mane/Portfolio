@@ -1,6 +1,6 @@
 on: 
   push:
-    branches: main
+    branches: ['main']
 
 name: 🚀 Deploy website on push
 jobs:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Use Node.js 16
       uses: actions/setup-node@v2
@@ -27,3 +27,4 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /
