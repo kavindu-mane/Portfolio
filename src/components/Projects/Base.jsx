@@ -1,13 +1,17 @@
-import React from 'react'
-import BasicPageStructure from '../BasicPageStructure/BasicPageStructure';
-import DetailsCard from './DetailsCard';
+import React, { lazy } from 'react'
 import rpb from "./ReactProgressBar/favicon.ico"
+import { Helmet } from 'react-helmet';
+const BasicPageStructure = lazy(() => import("../BasicPageStructure/BasicPageStructure"));
+const DetailsCard = lazy(() => import("./DetailsCard"));
 
 const Base = () => {
     return (
       <React.Fragment>
+        <Helmet>
+          <title>Kavindu Manahara | Projects</title>
+        </Helmet>
         <BasicPageStructure>
-          <div className="mx-2 my-20 md:my-24 grid gap-4 lg:grid-cols-2 justify-items-center sm:mx-5 md:mx-8">
+          <div className="mx-2 my-20 grid justify-items-center gap-4 sm:mx-5 md:mx-8 md:my-24 lg:grid-cols-2">
             <DetailsCard
               imgLink={"https://createme.kavindu.me/logo192.png"}
               name={"CreateME"}

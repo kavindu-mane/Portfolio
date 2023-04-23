@@ -1,8 +1,5 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-// import ReactProgressBar from "../components/Projects/ReactProgressBar/ReactProgressBar";
-// import Base from "../components/Projects/Base";
-// import Error from "./Error"
 const ReactProgressBar = lazy(() =>
   import("../components/Projects/ReactProgressBar/ReactProgressBar")
 );

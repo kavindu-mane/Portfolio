@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const Home = lazy(() => import("./pages/Home"));
 const Contacts = lazy(() => import("./pages/Contacts"));
 const Skills = lazy(() => import("./pages/Skills"));
@@ -19,6 +20,35 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <Helmet>
+          <link rel="icon" href="https://www.kavindu.me/favicon.ico" />
+          <meta
+            name="url"
+            property="og:url"
+            content="https://www.kavindu.me/"
+          />
+          <meta name="title" property="og:title" content="Kavindu Manahara" />
+          <meta
+            name="description"
+            property="og:description"
+            content="Portfolio website of Sri Lankan Computer Science Undergraduate , Developer and IT Enthusiast Kavindu Manahara."
+          />
+          <meta
+            property="og:image"
+            itemprop="image"
+            content="https://www.kavindu.me/webimg.png"
+          />
+
+          <meta name="twitter:url" content="https://www.kavindu.me/" />
+          <meta
+            name="twitter:description"
+            content="Portfolio website of Sri Lankan Computer Science Undergraduate , Developer and IT Enthusiast Kavindu Manahara."
+          />
+          <meta
+            property="twitter:image"
+            content="https://www.kavindu.me/webimg.png"
+          />
+        </Helmet>
         <Router>
           <Suspense
             fallback={

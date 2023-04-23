@@ -1,6 +1,10 @@
-import React from "react";
-import IntroSection from "../components/IntroSection/IntroSection";
-import BasicPageStructure from "../components/BasicPageStructure/BasicPageStructure";
+import React, { lazy } from "react";
+const IntroSection = lazy(() =>
+  import("../components/IntroSection/IntroSection")
+);
+const BasicPageStructure = lazy(() =>
+  import("../components/BasicPageStructure/BasicPageStructure")
+);
 
 const Home = () => {
   return (
