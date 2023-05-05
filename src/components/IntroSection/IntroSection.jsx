@@ -21,7 +21,7 @@ const IntroSection = () => {
           </p>
         }
       >
-        <div className="flex min-h-screen flex-col items-center justify-center overflow-hidden py-14">
+        <div className="flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-8">
           <img
             src={myImage}
             alt="my-pic"
