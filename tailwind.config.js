@@ -1,6 +1,6 @@
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}" , 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       backgroundImage: {
@@ -53,7 +53,9 @@ module.exports = {
       satisfy: ["Satisfy", "cursive"],
       kurale: ["Kurale", "serif"],
       alkatra: ["Alkatra", "cursive"],
+      belanosima: ["Belanosima", "sans-serif"],
+      belleza: ["Belleza", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

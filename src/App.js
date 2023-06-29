@@ -2,22 +2,29 @@ import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
 const Home = lazy(() => import("./pages/Home"));
-const Contacts = lazy(() => import("./pages/Contacts"));
-const Skills = lazy(() => import("./pages/Skills"));
-const About = lazy(() => import("./pages/About"));
-const Projects = lazy(() => import("./pages/Projects"));
+const RPB = lazy(() => import("./components/Projects/ReactProgressBar/ReactProgressBar"));
 const Error = lazy(() => import("./pages/Error"));
 
 const linkList = {
   "/": <Home />,
-  "/contact": <Contacts />,
-  "/skills": <Skills />,
-  "/about": <About />,
-  "/projects/*": <Projects />,
+  "/react-percentage-bar": <RPB />,
+};
+
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const themeSet = () => {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) && darkQuery.matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
 };
 
 class App extends Component {
   render() {
+    themeSet();
     return (
       <React.Fragment>
         <Helmet>

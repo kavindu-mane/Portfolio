@@ -1,114 +1,86 @@
-import React from "react";
-
-let timeOut;
-
-const navigationBtnClick = () => {
-  document.getElementById("nav-btn").classList.add("translate-x-11");
-  document.getElementById("nav-select-btn").classList.remove("translate-x-11");
-  navigationRestore();
-};
-
-const navigationRestore = () => {
-  timeOut = setTimeout(() => {
-    const navClasses = document.getElementById("nav-btn").classList;
-    if (navClasses.contains("translate-x-11")) {
-      navClasses.remove("translate-x-11");
-      document.getElementById("nav-select-btn").classList.add("translate-x-11");
-    }
-  }, 10000);
-};
-
-const setCurrentPage = (value) => {
-  const url = window.location.href;
-  return url.split("/").pop() === value
-    ? " bg-sky-700 rounded-md"
-    : " dark:text-slate-800";
-};
-
-const navigated = (link) => {
-  document.getElementById("nav-btn").classList.remove("translate-x-11");
-  document.getElementById("nav-select-btn").classList.add("translate-x-11");
-  clearTimeout(timeOut);
-  window.open(link, "_self");
-};
-
-const navigationIcon = (link, icon, text) => {
-  return (
-    <span
-      className={
-        "remove-highlight material-symbols-outlined cursor-pointer p-1 text-slate-100" +
-        setCurrentPage(text)
-      }
-      onClick={() => navigated(link)}
-      key={icon}
-    >
-      {icon}
-    </span>
-  );
-};
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Tooltip } from "flowbite-react";
 
 const NavigationIsland = () => {
+  const location = useLocation().hash;
+  const [prevActive, setPrevActive] = useState(
+    "btn-navigation-" + (location === "" ? "" : location.substring(1))
+  );
+
+  const titleCase = (text) => {
+    return text[0].toUpperCase() + text.substring(1);
+  };
+
+  const navigationIcon = (link, icon) => {
+    const id = "btn-navigation-" + link.substring(1);
+    return (
+      <Tooltip
+        key={icon}
+        content={
+          link.substring(1) === "" ? "Home" : titleCase(link.substring(1))
+        }
+      >
+        <a
+          data-tip="React-Tooltip"
+          href={link}
+          className={
+            "remove-highlight material-symbols-outlined mx-2 cursor-pointer rounded-md p-1 text-slate-100 duration-300 ease-in hover:bg-sky-500 dark:text-slate-900 dark:hover:text-slate-100"
+          }
+          id={id}
+        >
+          {icon}
+        </a>
+      </Tooltip>
+    );
+  };
+
   const pages = [
     {
       icon: "home",
       link: "/",
-      text: "",
     },
     {
       icon: "code",
-      link: "/skills",
-      text: "skills",
+      link: "#skills",
     },
     {
       icon: "work",
-      link: "/projects",
-      text: "projects",
+      link: "#projects",
     },
     {
       icon: "info",
-      link: "/about",
-      text: "about",
+      link: "#about",
     },
     {
       icon: "send",
-      link: "/contact",
-      text: "contact",
+      link: "#contact",
     },
   ];
 
-  const currentPage = () => {
-    let currentIcon;
-    const url = window.location.href;
-    pages.forEach((page) => {
-      if ("/" + url.split("/").pop() === page.link) {
-        currentIcon = page.icon;
-        return;
-      }
-    });
-
-    return currentIcon;
-  };
+  useEffect(() => {
+    const id =
+      "btn-navigation-" + (location === "" ? "" : location.substring(1));
+    const current = document.getElementById(id).classList;
+    const prev = document.getElementById(prevActive).classList;
+    current.add("bg-sky-600");
+    current.remove("dark:text-slate-900");
+    if (id !== prevActive) {
+      prev.remove("bg-sky-600");
+      prev.add("dark:text-slate-900");
+      setPrevActive(id);
+    }
+  }, [location , prevActive]);
 
   return (
     <React.Fragment>
       <div
-        className="remove-highlight fixed bottom-28 right-0 z-50 flex h-10 w-11 cursor-pointer items-center
-            justify-end rounded-l-full bg-slate-800 pe-2 drop-shadow-md duration-300 ease-in dark:bg-slate-100"
-        id="nav-btn"
-        onClick={() => navigationBtnClick()}
-      >
-        <span className="material-symbols-outlined text-slate-100 dark:text-slate-800">
-          {currentPage()}
-        </span>
-      </div>
-
-      <div
-        className="fixed bottom-7 right-0 z-50 flex h-52 w-11 translate-x-11 flex-col justify-between rounded-l-xl
-      bg-slate-800 py-1 pe-1 ps-2 drop-shadow-2xl duration-300 ease-in dark:bg-slate-100"
-        id="nav-select-btn"
+        data-tooltip-target="tooltip-default"
+        className="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2
+      justify-between rounded-full bg-slate-800 px-4 py-2 shadow-xl drop-shadow-xl dark:bg-slate-100"
       >
         {pages.map((page) => {
-          return navigationIcon(page.link, page.icon, page.text);
+          return navigationIcon(page.link, page.icon);
         })}
       </div>
     </React.Fragment>
