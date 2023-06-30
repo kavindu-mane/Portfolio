@@ -1,6 +1,11 @@
 import React, { lazy, useState, useEffect } from "react";
+import { RiComputerLine, RiMoonLine, RiSunLine } from "react-icons/ri";
 const DownloadBtn = lazy(() => import("../Common/DownloadBtn"));
 const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+const computer = () => <RiComputerLine className="relative" size={25} />;
+const sun = () => <RiSunLine className="relative" size={25} />;
+const moon = () => <RiMoonLine className="relative" size={25} />;
 
 const Header = () => {
   const [currentTheme, setCurrentTheme] = useState(
@@ -35,6 +40,17 @@ const Header = () => {
     }
   };
 
+  const themeIconSet = () => {
+    switch (currentTheme) {
+      case "dark_mode":
+        return moon();
+      case "flare":
+        return sun();
+      default:
+        return computer();
+    }
+  };
+
   useEffect(() => {
     themeSet();
   });
@@ -55,10 +71,10 @@ const Header = () => {
             <DownloadBtn />
           </div>
           <span
-            className="remove-highlight material-symbols-outlined mx-2 cursor-pointer rounded-md p-1 text-slate-900 hover:bg-sky-500 hover:text-slate-100 dark:text-slate-100"
+            className="remove-highlight mx-2 cursor-pointer rounded-md p-1 text-slate-900 hover:bg-sky-500 hover:text-slate-100 dark:text-slate-100"
             onClick={themeChnager}
           >
-            {currentTheme}
+            {themeIconSet()}
           </span>
         </div>
       </div>

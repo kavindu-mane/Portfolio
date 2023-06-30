@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Tooltip } from "flowbite-react";
+import { HiHome, HiCode } from "react-icons/hi";
+import { BsFillSendFill, BsInfoCircleFill } from "react-icons/bs";
+import { MdWork } from "react-icons/md";
 
 const NavigationIsland = () => {
   const location = useLocation().hash;
@@ -13,23 +16,22 @@ const NavigationIsland = () => {
   };
 
   const navigationIcon = (link, icon) => {
-    const id = "btn-navigation-" + link.substring(1);
+    const subLink = link.substring(1);
+    const id = "btn-navigation-" + subLink;
     return (
       <Tooltip
-        key={icon}
-        content={
-          link.substring(1) === "" ? "Home" : titleCase(link.substring(1))
-        }
+        key={"key" + subLink}
+        content={subLink === "" ? "Home" : titleCase(subLink)}
       >
-        <a
-          data-tip="React-Tooltip"
-          href={link}
-          className={
-            "remove-highlight material-symbols-outlined mx-2 cursor-pointer rounded-md p-1 text-slate-100 duration-300 ease-in hover:bg-sky-500 dark:text-slate-900 dark:hover:text-slate-100"
-          }
-          id={id}
-        >
-          {icon}
+        <a data-tip="React-Tooltip" href={link}>
+          <div
+            id={id}
+            className={
+              "remove-highlight relative mx-2 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md p-1 text-slate-100 duration-300 ease-in hover:bg-sky-500 dark:text-slate-900 dark:hover:text-slate-100"
+            }
+          >
+            {icon}
+          </div>
         </a>
       </Tooltip>
     );
@@ -37,23 +39,23 @@ const NavigationIsland = () => {
 
   const pages = [
     {
-      icon: "home",
+      icon: <HiHome size={22} className="relative" />,
       link: "/",
     },
     {
-      icon: "code",
+      icon: <HiCode size={22} className="relative" />,
       link: "#skills",
     },
     {
-      icon: "work",
+      icon: <MdWork size={22} className="relative" />,
       link: "#projects",
     },
     {
-      icon: "info",
+      icon: <BsInfoCircleFill size={22} className="relative" />,
       link: "#about",
     },
     {
-      icon: "send",
+      icon: <BsFillSendFill size={22} className="relative" />,
       link: "#contact",
     },
   ];
@@ -70,7 +72,7 @@ const NavigationIsland = () => {
       prev.add("dark:text-slate-900");
       setPrevActive(id);
     }
-  }, [location , prevActive]);
+  }, [location, prevActive]);
 
   return (
     <React.Fragment>

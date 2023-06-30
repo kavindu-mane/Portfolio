@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy } from "react";
 import myImage from "../../resources/my-image.jpg";
 import IntroBkg from "../../resources/into-bkg.svg";
 import { Card } from "flowbite-react";
@@ -16,48 +16,44 @@ const IntroSection = () => {
   };
   return (
     <React.Fragment>
-      <Suspense
-        fallback={
-          <p className="flex h-screen items-center justify-center text-lg italic">
-            Loading please wait...
-          </p>
-        }
+      <div
+        className="mb-10 flex h-auto min-h-screen items-center justify-center overflow-hidden pb-8 pt-28"
+        style={{
+          backgroundImage: `url(${IntroBkg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
       >
-        <div
-          className="mb-10 grid h-auto min-h-screen grid-cols-1 justify-center overflow-hidden px-10 pb-8 pt-28 lg:grid-cols-2"
-          style={{
-            backgroundImage: `url(${IntroBkg})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="flex items-center justify-center lg:me-32 lg:justify-end lg:pb-20">
-            <img
-              src={myImage}
-              alt="my-pic"
-              className="mb-10 h-[200px] w-[200px] animate-profileBorder rounded-full border-2 sm:mb-20 sm:h-[300px] sm:w-[300px] lg:mb-0"
-            />
-          </div>
-
-          <div className="flex flex-col items-center justify-start lg:items-start lg:justify-center lg:pb-20">
-            <h1 className="font-belleza text-2xl sm:text-3xl md:text-4xl">
-              Kavindu&ensp;Manahara
-            </h1>
-
-            <TypingText />
-            <div className="mt-10 flex justify-center">
-              {Object.keys(socilaList).map((key, i) => {
-                return (
-                  <SocialIcons keyword={key} link={socilaList[key]} key={i} />
-                );
-              })}
+        <Card className="h-fit min-w-[18rem] sm:w-[25rem] md:w-[35rem] lg:w-[62rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="flex items-center justify-center lg:me-32 lg:justify-end lg:pb-20">
+              <img
+                src={myImage}
+                alt="my-pic"
+                className="mb-10 h-[200px] w-[200px] animate-profileBorder rounded-full border-2 sm:my-20 sm:h-[250px] sm:w-[250px] lg:mb-0"
+              />
             </div>
-            <div className="mt-10 flex sm:hidden">
-              <DownloadBtn />
+
+            <div className="flex flex-col items-center justify-start lg:items-start lg:justify-center lg:py-20">
+              <h1 className="font-belleza text-2xl sm:text-3xl md:text-4xl">
+                Kavindu&ensp;Manahara
+              </h1>
+
+              <TypingText />
+              <div className="mt-10 flex justify-center">
+                {Object.keys(socilaList).map((key, i) => {
+                  return (
+                    <SocialIcons keyword={key} link={socilaList[key]} key={i} />
+                  );
+                })}
+              </div>
+              <div className="mt-10 flex sm:hidden">
+                <DownloadBtn />
+              </div>
             </div>
           </div>
-        </div>
-      </Suspense>
+        </Card>
+      </div>
     </React.Fragment>
   );
 };
