@@ -62,9 +62,14 @@ const Header = () => {
           className="text-default ms-2 font-belleza text-xl font-extrabold md:text-2xl"
           href="/"
         >
-          <span className="dark:emerald-400 text-emerald-500">K</span>
+          <span className="text-2xl text-amber-500 dark:text-amber-400 md:text-3xl">
+            K
+          </span>
           avindu&ensp;
-          <span className="dark:emerald-400 text-emerald-500">M</span>anahara
+          <span className="text-2xl text-amber-500 dark:text-amber-400 md:text-3xl">
+            M
+          </span>
+          anahara
         </a>
         <div className="flex">
           <div className="hidden sm:flex">

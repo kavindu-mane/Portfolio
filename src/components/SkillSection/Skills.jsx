@@ -2,10 +2,7 @@ import { Card } from "flowbite-react";
 import React from "react";
 import { CircularProgressBar } from "react-percentage-bar";
 
-const Skills = ({ icon, percentage }) => {
-  const link = `https://raw.githubusercontent.com/devicons/devicon/master/icons/${icon}/${icon}-${
-    icon !== "tailwindcss" ? "original" : "plain"
-  }.svg`;
+const Skills = ({ icon, percentage , logo}) => {
   return (
     <React.Fragment>
       <Card className="mx-5 my-5 w-80 bg-white shadow-xl drop-shadow-xl duration-300 ease-in hover:bg-teal-100 dark:bg-gray-900 dark:hover:bg-gray-800">
@@ -16,7 +13,7 @@ const Skills = ({ icon, percentage }) => {
             color={["#fc2947", "#7149c6"]}
             trackColor={"#cbd5e120"}
           >
-            <img src={link} alt={icon} className="w-12"/>
+            {logo}
           </CircularProgressBar>
         </div>
         <p className="text-center font-bold text-slate-900 dark:text-slate-100">

@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import myImage from "../../resources/my-image.jpg";
-import IntroBkg from "../../resources/into-bkg.svg";
 import { Card } from "flowbite-react";
+import IntroBg from "../../resources/intro-bg.svg";
 const TypingText = lazy(() => import("./TypingText"));
 const SocialIcons = lazy(() => import("../Common/SocialIcons"));
 const DownloadBtn = lazy(() => import("../Common/DownloadBtn"));
@@ -19,9 +19,10 @@ const IntroSection = () => {
       <div
         className="mb-10 flex h-auto min-h-screen items-center justify-center overflow-hidden pb-8 pt-28"
         style={{
-          backgroundImage: `url(${IntroBkg})`,
+          backgroundImage: `url(${IntroBg})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          fill:"red"
         }}
       >
         <Card className="h-fit min-w-[18rem] sm:w-[25rem] md:w-[35rem] lg:w-[62rem]">

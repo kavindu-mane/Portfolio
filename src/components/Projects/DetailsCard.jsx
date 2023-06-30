@@ -1,6 +1,14 @@
 import React from "react";
+import { BiLink, BiLogoGithub } from "react-icons/bi";
 
-const Card = ({ imgLink, name, description, link, githubLink , technologies }) => {
+const Card = ({
+  imgLink,
+  name,
+  description,
+  link,
+  githubLink,
+  technologies,
+}) => {
   return (
     <React.Fragment>
       <div
@@ -25,12 +33,10 @@ const Card = ({ imgLink, name, description, link, githubLink , technologies }) =
             alt={"project link"}
             target="_blank"
             rel="noreferrer"
-            className="ms-2 flex h-[2.2rem] cursor-pointer items-center rounded-md
+            className="relative ms-2 flex h-[2.2rem] cursor-pointer items-center rounded-md
             bg-gradient-to-r from-fuchsia-600 to-blue-700 px-4 text-white duration-300 ease-in hover:scale-90"
           >
-            <span className="material-symbols-outlined rotate-[-45deg]">
-              link
-            </span>
+            <BiLink size={24} className="relative" />
           </a>
           <div className="flex">
             {technologies.map((v) => {
@@ -38,24 +44,20 @@ const Card = ({ imgLink, name, description, link, githubLink , technologies }) =
                 <img
                   src={`https://img.shields.io/badge/-%2315720000.svg?style=for-the-badge&logo=${v}&logoColor=black`}
                   alt=""
-                  className="dark:invert -mx-3 h-[2.2rem] scale-125"
+                  className="-mx-3 h-[2.2rem] scale-125 dark:invert"
                   key={v}
                 />
               );
             })}
           </div>
           <a
-            className="flex h-[2.2rem] cursor-pointer rounded-md bg-gradient-to-r from-fuchsia-600
-        to-blue-700 px-4 text-white duration-300 ease-in hover:scale-90"
+            className="relative flex h-[2.2rem] cursor-pointer items-center rounded-md bg-gradient-to-r
+        from-fuchsia-600 to-blue-700 px-4 text-white duration-300 ease-in hover:scale-90"
             href={githubLink}
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg"
-              alt="github"
-              className="w-5 invert"
-            />
+            <BiLogoGithub size={24} className="relative" />
           </a>
         </div>
       </div>
