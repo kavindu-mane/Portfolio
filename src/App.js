@@ -1,9 +1,15 @@
 import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Home = lazy(() => import("./pages/Home"));
-const RPB = lazy(() => import("./components/Projects/ReactProgressBar/ReactProgressBar"));
+const RPB = lazy(() =>
+  import("./components/Projects/ReactProgressBar/ReactProgressBar")
+);
 const Error = lazy(() => import("./pages/Error"));
+
+AOS.init();
 
 const linkList = {
   "/": <Home />,

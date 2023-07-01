@@ -5,7 +5,11 @@ import { CircularProgressBar } from "react-percentage-bar";
 const Skills = ({ icon, percentage , logo}) => {
   return (
     <React.Fragment>
-      <Card className="mx-5 my-5 w-80 bg-white shadow-xl drop-shadow-xl duration-300 ease-in hover:bg-teal-100 dark:bg-gray-900 dark:hover:bg-gray-800">
+      <Card
+        className="mx-4 my-5 w-72 bg-white shadow-xl drop-shadow-xl duration-300 ease-in hover:bg-teal-100 dark:bg-gray-900 dark:hover:bg-gray-800"
+        data-aos="zoom-in"
+        data-aos-duration="800"
+      >
         <div className="flex flex-col items-center justify-center">
           <CircularProgressBar
             percentage={percentage}

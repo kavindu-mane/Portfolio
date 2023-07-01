@@ -14,7 +14,9 @@ const Error = () => {
           </p>
         }
       >
-        <h1 className="mt-24">Error</h1>
+        <h1 className="flex h-screen items-center justify-center text-2xl md:text-4xl">
+          Error 404 | Page Not Found
+        </h1>
       </Suspense>
     </React.Fragment>
   );

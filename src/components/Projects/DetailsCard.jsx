@@ -12,6 +12,8 @@ const Card = ({
   return (
     <React.Fragment>
       <div
+        data-aos="fade-up"
+        data-aos-duration="800"
         className="my-5 flex h-full min-w-[20rem] max-w-[40rem] flex-col justify-between rounded-lg border-[1px] border-slate-300 bg-emerald-100
        p-4 shadow-md shadow-slate-300  dark:border-slate-500 dark:bg-slate-700 dark:shadow-slate-700 "
       >

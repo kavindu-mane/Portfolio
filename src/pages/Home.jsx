@@ -1,5 +1,9 @@
 import React, { lazy } from "react";
-const ContactSection = lazy(() => import("../components/ContactSection/ContactSection"));
+import Wave from "../resources/wave.svg";
+const IntroBg = lazy(() => import("../components/Common/IntroBg"));
+const ContactSection = lazy(() =>
+  import("../components/ContactSection/ContactSection")
+);
 const SkillSection = lazy(() =>
   import("../components/SkillSection/SkillSection")
 );
@@ -22,15 +26,24 @@ const ProjectSection = lazy(() =>
 const Home = () => {
   return (
     <React.Fragment>
+      <IntroBg />
       <Header />
       <Gradient />
       <IntroSection />
-      <NavigationIsland />
       <SkillSection />
+
       <ProjectSection />
-      <AboutSection />
-      <ContactSection/>
-      <Footer />
+      <div className="relative">
+        <img
+          src={Wave}
+          alt="wave"
+          className="absolute bottom-0 -z-50 h-full object-cover opacity-70 dark:opacity-60"
+        />
+        <AboutSection />
+        <ContactSection />
+        <Footer />
+      </div>
+      <NavigationIsland />
     </React.Fragment>
   );
 };

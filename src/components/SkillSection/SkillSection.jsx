@@ -71,9 +71,6 @@ const SkillSection = () => {
             logo={<SiIcon.SiMongodb className="relative h-12 w-12" />}
           />
         </div>
-        {/* <div className="absolute h-full w-full -z-30">
-          
-        </div> */}
       </div>
     </React.Fragment>
   );

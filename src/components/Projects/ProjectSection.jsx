@@ -6,7 +6,10 @@ const DetailsCard = lazy(() => import("./DetailsCard"));
 const ProjectSection = () => {
   return (
     <React.Fragment>
-      <div className="flex flex-col items-center pt-20" id="projects">
+      <div
+        className="mt-10 flex flex-col items-center bg-amber-400 pb-32 pt-20 dark:bg-slate-950"
+        id="projects"
+      >
         <Titles title={"Projects"} />
         <div className="py-15 mx-2 grid justify-items-center gap-4 sm:mx-5 md:mx-8 lg:grid-cols-2">
           <DetailsCard

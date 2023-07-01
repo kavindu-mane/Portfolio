@@ -8,7 +8,11 @@ const ContactSection = () => {
     <React.Fragment>
       <div className="flex flex-col items-center pt-20" id="contact">
         <Titles title={"Contact"} />
-        <form className="my-5 flex w-5/6 flex-col items-center justify-center gap-4 rounded-lg bg-white p-5 shadow-xl drop-shadow-xl dark:bg-slate-600 md:w-4/6 lg:w-2/3 xl:w-1/2">
+        <form
+          data-aos="fade-up"
+          data-aos-duration="800"
+          className="my-5 flex w-5/6 flex-col items-center justify-center gap-4 rounded-lg bg-white p-5 shadow-xl drop-shadow-xl dark:bg-slate-600 md:w-4/6 lg:w-2/3 xl:w-1/2"
+        >
           <div className="w-full">
             <div className="mb-2 block">
               <Label htmlFor="email" value="Your email" />
@@ -23,7 +27,7 @@ const ContactSection = () => {
 
           <div className="w-full">
             <div className="mb-2 block">
-              <Label htmlFor="name" value="Your neme" />
+              <Label htmlFor="name" value="Your name" />
             </div>
             <TextInput id="name" required type="text" />
           </div>
@@ -44,10 +48,12 @@ const ContactSection = () => {
             Submit
           </Button>
         </form>
-        <p className="italic mb-1 mt-5 text-lg">For More enquiries , feel free email me</p>
+        <p className="mb-1 mt-5 text-lg italic">
+          For More enquiries , feel free email me
+        </p>
         <a
           href="mailto:contact@kavindu.me"
-          className="relative flex items-center hover:text-emerald-500 mb-5"
+          className="relative mb-5 flex items-center duration-300 ease-in hover:invert"
         >
           <MdEmail size={22} className="relative mx-4" />
           <span className=""> contact@kavindu.me</span>

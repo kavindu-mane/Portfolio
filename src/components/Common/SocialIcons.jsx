@@ -1,6 +1,21 @@
 import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
 
-const SocialIcons = ({ link, keyword }) => {
+const icons = {
+  facebook: <FaFacebook className="relative h-5 w-5 invert sm:h-6 sm:w-6" />,
+  instagram: <FaInstagram className="relative h-5 w-5 invert sm:h-6 sm:w-6" />,
+  twitter: <FaTwitter className="relative h-5 w-5 invert sm:h-6 sm:w-6" />,
+  github: <FaGithub className="relative h-5 w-5 invert sm:h-6 sm:w-6" />,
+  linkedin: <FaLinkedin className="relative h-5 w-5 invert sm:h-6 sm:w-6" />,
+};
+
+const SocialIcons = ({ link, icon }) => {
   return (
     <React.Fragment>
       <a href={link} target="_blank" rel="noopener noreferrer">
@@ -8,11 +23,7 @@ const SocialIcons = ({ link, keyword }) => {
           className="group mx-2 rounded-md bg-slate-900 p-2 duration-200 ease-in hover:-translate-y-2 
           hover:scale-125 hover:bg-emerald-600 dark:bg-slate-50 dark:hover:bg-emerald-600"
         >
-          <img
-            src={`https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${keyword}.svg`}
-            alt={keyword}
-            className="h-[1.2rem] w-[1.2rem] invert group-hover:invert dark:filter-none sm:h-[1.5rem] sm:w-[1.5rem]"
-          />
+          {icons[icon]}
         </div>
       </a>
     </React.Fragment>

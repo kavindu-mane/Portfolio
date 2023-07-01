@@ -1,7 +1,6 @@
 import React, { lazy } from "react";
 import myImage from "../../resources/my-image.jpg";
 import { Card } from "flowbite-react";
-import IntroBg from "../../resources/intro-bg.svg";
 const TypingText = lazy(() => import("./TypingText"));
 const SocialIcons = lazy(() => import("../Common/SocialIcons"));
 const DownloadBtn = lazy(() => import("../Common/DownloadBtn"));
@@ -18,14 +17,12 @@ const IntroSection = () => {
     <React.Fragment>
       <div
         className="mb-10 flex h-auto min-h-screen items-center justify-center overflow-hidden pb-8 pt-28"
-        style={{
-          backgroundImage: `url(${IntroBg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          fill:"red"
-        }}
       >
-        <Card className="h-fit min-w-[18rem] sm:w-[25rem] md:w-[35rem] lg:w-[62rem]">
+        <Card
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          className="h-fit min-w-[18rem] sm:w-[25rem] md:w-[35rem] lg:w-[62rem]"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="flex items-center justify-center lg:me-32 lg:justify-end lg:pb-20">
               <img
@@ -44,7 +41,7 @@ const IntroSection = () => {
               <div className="mt-10 flex justify-center">
                 {Object.keys(socilaList).map((key, i) => {
                   return (
-                    <SocialIcons keyword={key} link={socilaList[key]} key={i} />
+                    <SocialIcons icon={key} link={socilaList[key]} key={i} />
                   );
                 })}
               </div>
