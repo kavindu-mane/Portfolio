@@ -16,7 +16,7 @@ const ProjectSection = () => {
             imgLink={"https://createme.kavindu.me/logo192.png"}
             name={"CreateME"}
             description={
-              "Create Amazing GitHub Profile README Without Coding.Show your skills, experience and projects and many more. Generate markdown for your profile with just a few clicks!"
+              "Create Amazing GitHub Profile README Without Coding.Show your skills, experience , projects and many more. Generate markdown for your profile with just few clicks!"
             }
             link={"https://createme.kavindu.me/"}
             githubLink={"https://github.com/kavindu-mane/CreateME"}
@@ -38,7 +38,7 @@ const ProjectSection = () => {
             imgLink={"https://www.ieeeopendayuwu.tech/favicon.ico"}
             name={"IEEE Openday UWU 2023 Website"}
             description={
-              "Uva Wellassa University IEEE Openday 2023 official website. This website help to get an idea about IEEE and register event for undergraduates."
+              "Uva Wellassa University IEEE Open day 2023 official website. This website help to get an idea about IEEE and register event for undergraduates."
             }
             link={"https://www.ieeeopendayuwu.tech"}
             githubLink={"https://github.com/SasanDilantha/IEEE_Openday_2023"}
@@ -49,7 +49,7 @@ const ProjectSection = () => {
             imgLink={"https://www.kavindu.me/favicon.ico"}
             name={"Github Visitors Counter"}
             description={
-              "Github Visitors Counter is couter that calculate github profile viwers and show that value as badge."
+              "GitHub Visitors Counter is a counter that calculate GitHub profile viewers and show that value as a badge."
             }
             link={"https://github.com/kavindu-mane/Visitors-Counter"}
             githubLink={"https://github.com/kavindu-mane/Visitors-Counter"}
@@ -61,7 +61,7 @@ const ProjectSection = () => {
               imgLink={"https://www.kavindu.me/favicon.ico"}
               name={"WhatsSender"}
               description={
-                "WhatsSender is a android app for open WhatsApp chat non-contacts phone numbers. Also this app support WhatsApp , WhatsApp Business and other modified versions."
+                "WhatsSender is an android app for open WhatsApp chat non-contacts phone numbers. Also this app support WhatsApp , WhatsApp Business and other modified versions."
               }
               link={"https://github.com/kavindu-mane/WhatsSender"}
               githubLink={"https://github.com/kavindu-mane/WhatsSender"}
