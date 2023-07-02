@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "react-toastify/dist/ReactToastify.css";
 const Home = lazy(() => import("./pages/Home"));
 const RPB = lazy(() =>
   import("./components/Projects/ReactProgressBar/ReactProgressBar")
