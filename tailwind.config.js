@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "primary-green": "rgb(var(--primary-green)/ <alpha-value>)",
+        "secondary-blue": "rgb(var(--secondary-blue)/ <alpha-value>)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
@@ -47,9 +51,22 @@ module.exports = {
           "90%": { boxShadow: "0 0 2px 2px #f472b6" },
           "95%": { boxShadow: "0 0 5rem -12px #f472b6" },
         },
+
+        upDown: {
+          "0% , 50% , 100%": { transform: "translateY(0)" },
+          "25%": { transform: "translateY(-20px)" },
+          "75%": { transform: "translateY(20px)" },
+        },
+        upDownRotate: {
+          "0% , 50% , 100%": { transform: "translateY(0) rotate(45deg)" },
+          "25%": { transform: "translateY(-20px)" },
+          "75%": { transform: "translateY(20px)" },
+        },
       },
       animation: {
         profileBorder: "profileBorder 10s ease-in-out infinite",
+        upDown: "upDown  5s linear infinite",
+        upDownRotate: "upDownRotate 5s linear infinite",
       },
     },
     fontFamily: {

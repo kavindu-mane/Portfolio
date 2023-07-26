@@ -4,13 +4,28 @@
 
 @layer base {
   body {
-    @apply bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white;
+    @apply bg-slate-50 text-slate-900 dark:bg-gray-800 dark:text-white overflow-x-hidden;
   }
-  #root {
-    @apply overflow-x-hidden;
+
+  :root {
+    --primary-green: 16 185 129;
+    --secondary-blue: 37 100 235;
+  }
+
+  :root[class~="dark"] {
+    --primary-green: 0 255 171;
+    --secondary-blue: 186 230 253;
+  }
+
+  .font-outline {
+    -webkit-text-stroke: 1.5px rgb(var(--primary-green));
   }
 }
 
 .remove-highlight {
   -webkit-tap-highlight-color: transparent;
+}
+
+.animation-delay {
+  animation-delay: -2500ms;
 }
