@@ -2,7 +2,7 @@ import React, { lazy } from "react";
 import myImage from "../../resources/my-image.jpg";
 import { Card } from "flowbite-react";
 const TypingText = lazy(() => import("./TypingText"));
-const SocialIcons = lazy(() => import("../Common/SocialIcons"));
+const SocialIcons = lazy(() => import("../Homepage/SocialIcon"));
 const DownloadBtn = lazy(() => import("../Common/DownloadBtn"));
 
 const IntroSection = () => {
@@ -15,9 +15,7 @@ const IntroSection = () => {
   };
   return (
     <React.Fragment>
-      <div
-        className="mb-10 flex h-auto min-h-screen items-center justify-center overflow-hidden pb-8 pt-28"
-      >
+      <div className="mb-10 flex h-auto min-h-screen items-center justify-center overflow-hidden pb-8 pt-28">
         <Card
           data-aos="zoom-in"
           data-aos-duration="500"
