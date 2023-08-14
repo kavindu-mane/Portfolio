@@ -1,136 +1,29 @@
-import React, { lazy, useState, useEffect } from "react";
-// import Wave from "../resources/wave.svg";
-// const IntroBg = lazy(() => import("../components/Common/IntroBg"));
-// const ContactSection = lazy(() =>
-//   import("../components/ContactSection/ContactSection")
-// );
-// const SkillSection = lazy(() =>
-//   import("../components/SkillSection/SkillSection")
-// );
-// const AboutSection = lazy(() =>
-//   import("../components/AboutSection/AboutSection")
-// );
-// const Header = lazy(() => import("../components/HeaderAndFooter/Header"));
-// const Footer = lazy(() => import("../components/HeaderAndFooter/Footer"));
-// const Gradient = lazy(() => import("../components/Common/Gradient"));
-// const IntroSection = lazy(() =>
-//   import("../components/IntroSection/IntroSection")
-// );
-// const ProjectSection = lazy(() =>
-//   import("../components/Projects/ProjectSection")
-// );
-import { Dropdown } from "flowbite-react";
+import React, { lazy } from "react";
 import ReactTypingEffect from "react-typing-effect";
-import { MdDarkMode, MdComputer, MdSunny } from "react-icons/md";
 import Me from "../assets/me.png";
 import Matrix from "../assets/matrix.svg";
 
+const DownloadBtn = lazy(() => import("../components/Common/DownloadBtn"));
 const NavigationIsland = lazy(() =>
   import("../components/Common/NavigationIslad")
 );
 const SocialIcons = lazy(() => import("../components/Homepage/SocialIcons"));
-
-// theme icons
-const themeIcons = {
-  dark: <MdDarkMode className="h-5 w-5" />,
-  light: <MdSunny className="h-5 w-5" />,
-  default: <MdComputer className="h-5 w-5" />,
-};
+const Header = lazy(() => import("../components/Common/Header"));
+const Gradient = lazy(() => import("../components/Common/Gradient"));
 
 const Home = () => {
-  // theme status
-  const [currentTheme, setCurrentTheme] = useState(
-    !("theme" in localStorage)
-      ? "default"
-      : localStorage.theme === "dark"
-      ? "dark"
-      : "light"
-  );
-
-  useEffect(() => {
-    // theme changers
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [currentTheme]);
   return (
     <React.Fragment>
-      {/* <IntroBg />
-      <Header />
-      <Gradient />
-      <IntroSection />
-      <SkillSection />
-
-      <ProjectSection />
-      <div className="relative">
-        <img
-          src={Wave}
-          alt="wave"
-          className="absolute bottom-0 -z-50 h-full object-cover opacity-70 dark:opacity-60"
-        />
-        <AboutSection />
-        <ContactSection />
-        <Footer />
-      </div> */}
-
       {/* hero section  */}
-      <div className="flex min-h-screen w-screen flex-col justify-between">
+      <div className="flex h-screen min-h-[55rem] w-screen flex-col justify-between overflow-hidden">
         {/* header */}
-        <div className="flex items-center justify-between px-8 pt-4">
-          {/* logo */}
-          <a
-            href="/"
-            className="font-belanosima text-2xl text-secondary-blue md:text-3xl"
-          >
-            <span className="text-primary-green">K</span>avindu&ensp;
-            <span className="text-primary-green">M</span>anahara
-          </a>
-
-          {/* theme button */}
-          <Dropdown
-            label={themeIcons[currentTheme]}
-            placement="top"
-            size="xs"
-            arrowIcon={false}
-          >
-            <Dropdown.Item
-              onClick={() => {
-                setCurrentTheme("dark");
-                localStorage.theme = "dark";
-              }}
-            >
-              {themeIcons.dark} &ensp;Dark
-            </Dropdown.Item>
-            <Dropdown.Item
-              onClick={() => {
-                setCurrentTheme("light");
-                localStorage.theme = "light";
-              }}
-            >
-              {themeIcons.light} &ensp;Light
-            </Dropdown.Item>
-            <Dropdown.Item
-              onClick={() => {
-                setCurrentTheme("default");
-                localStorage.removeItem("theme");
-              }}
-            >
-              {themeIcons.default} &ensp;Default
-            </Dropdown.Item>
-          </Dropdown>
-        </div>
+        <Header />
 
         {/* image and content */}
-        <div className="flex w-screen justify-center">
+        <div className="flex h-full w-screen justify-center px-5 lg:h-auto">
           {/* image */}
-          <div className="relative w-1/2">
-            <img src={Me} alt="me" className="h-[90vh]" />
+          <div className="relative hidden lg:block lg:w-3/5 xl:w-1/2">
+            <img src={Me} alt="me" className="h-[90vh] object-cover" />
             {/* middle matrix */}
             <img
               src={Matrix}
@@ -142,7 +35,7 @@ const Home = () => {
           </div>
 
           {/* content */}
-          <div className="flex w-1/2 flex-col justify-center">
+          <div className="flex h-full flex-col justify-center py-5 lg:w-2/5 xl:w-1/2">
             <div className="relative text-secondary-blue">
               {/* hello text */}
               <h4 className="my-2 text-lg uppercase tracking-widest">hello,</h4>
@@ -170,7 +63,10 @@ const Home = () => {
                   ]}
                   displayTextRenderer={(text, i) => {
                     return (
-                      <span key={i} className="flex items-center text-sky-400">
+                      <span
+                        key={i}
+                        className="flex items-center text-sky-600 dark:text-sky-400"
+                      >
                         {text}
                       </span>
                     );
@@ -179,8 +75,8 @@ const Home = () => {
               </div>
 
               {/* description text */}
-              <p className="mb-7 max-w-xl italic text-slate-900 dark:text-white xl:max-w-2xl">
-                I am 22 years old web developer from Sri Lanka.I have front-end
+              <p className="mb-7 max-w-2xl italic text-slate-900 dark:text-white">
+                I am 23 years old web developer from Sri Lanka.I have front-end
                 skills in JavaScript , React , Bootstrap and Tailwind CSS. As
                 well as I'm currently learning PHP and Express Js as back-end
                 technologies.These days I am reading for a degree in Bachelor of
@@ -189,12 +85,7 @@ const Home = () => {
               </p>
 
               {/* download button */}
-              <a
-                href="/resume.pdf"
-                className="rounded-md bg-orange-500 px-3 py-2.5 font-bold text-white duration-300 ease-in"
-              >
-                Download Resume
-              </a>
+              <DownloadBtn />
               {/* social icons */}
               <SocialIcons />
 
@@ -219,13 +110,13 @@ const Home = () => {
                 className="absolute -top-40 end-48 animate-upDownRotate opacity-30 dark:opacity-20"
               />
             </div>
-
-            {/* top blur effect */}
-            <div className="absolute -end-1/3 -top-1/4 -z-50 h-2/3 w-2/3 bg-sky-500 opacity-50 blur-[500px] dark:opacity-30"></div>
           </div>
         </div>
       </div>
 
+      {/* top blur effect */}
+      <Gradient />
+      {/* navigation island */}
       <NavigationIsland />
     </React.Fragment>
   );

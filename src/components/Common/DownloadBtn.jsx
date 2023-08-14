@@ -4,9 +4,9 @@ const DownloadBtn = () => {
   return (
     <React.Fragment>
       <a
-      href="/resume.pdf"
-        className="me-2 rounded-md bg-[#334155ee] px-2 py-[5px] text-white
-      duration-100 ease-in hover:bg-orange-600 dark:bg-[#94a3b870] hover:dark:bg-orange-500"
+        href="/resume.pdf"
+        className="rounded-md bg-orange-500/95 px-2 py-2.5 text-white
+      duration-200 ease-in hover:bg-gray-600"
       >
         Download Resume
       </a>

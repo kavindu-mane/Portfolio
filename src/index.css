@@ -4,12 +4,13 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-gray-800 dark:text-white overflow-x-hidden;
+    @apply relative overflow-x-hidden bg-slate-50 text-slate-900 dark:bg-gray-800 dark:text-white;
   }
 
   :root {
     --primary-green: 16 185 129;
     --secondary-blue: 37 100 235;
+    @apply overflow-x-hidden;
   }
 
   :root[class~="dark"] {
