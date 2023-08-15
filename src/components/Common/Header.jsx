@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MdDarkMode, MdComputer, MdSunny } from "react-icons/md";
-import { Dropdown } from "flowbite-react";
-import ThemeSwitcher from "../../data/ThemeSwitcher"
+import ThemeSwitcher from "../../data/ThemeSwitcher";
 
 // theme icons
 const themeIcons = {
@@ -21,11 +20,26 @@ const Header = () => {
   );
 
   // theme changers
-  useEffect(() => {ThemeSwitcher()}, [currentTheme]);
+  useEffect(() => {
+    ThemeSwitcher();
+  }, [currentTheme]);
+
+  const themeChenger = () => {
+    if (currentTheme === "default") {
+      localStorage.setItem("theme", "dark");
+      setCurrentTheme("dark");
+    } else if (currentTheme === "dark") {
+      localStorage.setItem("theme", "light");
+      setCurrentTheme("light");
+    } else {
+      localStorage.removeItem("theme");
+      setCurrentTheme("default");
+    }
+  };
 
   return (
     <React.Fragment>
-      <div className="flex items-center justify-between px-5 pt-4 lg:px-10 w-full">
+      <div className="flex w-full items-center justify-between px-5 pt-4 lg:px-10">
         {/* logo */}
         <a
           href="/"
@@ -36,39 +50,11 @@ const Header = () => {
         </a>
 
         {/* theme button */}
-        <div className="dark:bg-sky-500 bg-sky-700 p-2 rounded-lg text-white">
-          <Dropdown
-            label={themeIcons[currentTheme]}
-            placement="bottom"
-            size="xs"
-            inline
-            arrowIcon={false}
-          >
-            <Dropdown.Item
-              onClick={() => {
-                setCurrentTheme("dark");
-                localStorage.theme = "dark";
-              }}
-            >
-              {themeIcons.dark} &emsp;Dark
-            </Dropdown.Item>
-            <Dropdown.Item
-              onClick={() => {
-                setCurrentTheme("light");
-                localStorage.theme = "light";
-              }}
-            >
-              {themeIcons.light} &emsp;Light
-            </Dropdown.Item>
-            <Dropdown.Item
-              onClick={() => {
-                setCurrentTheme("default");
-                localStorage.removeItem("theme");
-              }}
-            >
-              {themeIcons.default} &emsp;Default
-            </Dropdown.Item>
-          </Dropdown>
+        <div
+          onClick={themeChenger}
+          className="cursor-pointer rounded-lg bg-sky-700 p-2 text-white dark:bg-sky-500"
+        >
+          {themeIcons[currentTheme]}
         </div>
       </div>
     </React.Fragment>

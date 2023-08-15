@@ -6,7 +6,7 @@ import { BsFillSendFill } from "react-icons/bs";
 import { MdWork, MdFeedback } from "react-icons/md";
 
 const NavigationIsland = () => {
-  const location = useLocation().hash;
+  const location = useLocation().pathname;
 
   const titleCase = (text) => text[0].toUpperCase() + text.substring(1);
 
@@ -22,7 +22,7 @@ const NavigationIsland = () => {
             id={id}
             className={
               "remove-highlight relative mx-2 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md p-1 text-[22px] text-slate-100 duration-300 ease-in hover:bg-sky-500 dark:text-slate-900 dark:hover:text-slate-100 " +
-              (link.substring(1) === location
+              (link === location.substring(1)
                 ? "bg-sky-600 dark:text-white"
                 : "")
             }

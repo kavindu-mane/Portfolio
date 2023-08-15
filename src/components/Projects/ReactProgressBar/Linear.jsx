@@ -1,5 +1,6 @@
 import React, { useState ,lazy } from "react";
 import { LinearProgressBar } from "react-percentage-bar";
+import { BiPlus } from "react-icons/bi";
 const MultipleObserver = lazy(() => import("./MultipleObserver"));
 const Card = lazy(() => import("./Card"));
 
@@ -357,7 +358,7 @@ const Linear = () => {
         }
         onClick={() => setLength((prev) => ++prev)}
       >
-        <span className="material-symbols-outlined">add</span>
+        <BiPlus className="relative" />
       </button>
     </React.Fragment>
   );

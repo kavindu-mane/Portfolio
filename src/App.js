@@ -5,6 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
 import ThemeSwitcher from "./data/ThemeSwitcher";
+const Skill = lazy(() => import("./pages/Skill"));
+const Projects = lazy(() => import("./pages/Projects"));
 const Home = lazy(() => import("./pages/Home"));
 const RPB = lazy(() =>
   import("./components/Projects/ReactProgressBar/ReactProgressBar")
@@ -15,7 +17,10 @@ AOS.init();
 
 const linkList = {
   "/": <Home />,
-  "/react-percentage-bar": <RPB />,
+  "/projects/react-percentage-bar": <RPB />,
+  "/skills":<Skill/>,
+  "/projects":<Projects/>,
+  "*":<Error/>
 };
 
 function App() {
@@ -59,7 +64,6 @@ function App() {
             {Object.keys(linkList).map((key) => {
               return <Route key={key} path={key} element={linkList[key]} />;
             })}
-            {<Route path="*" element={<Error />} />}
           </Routes>
         </Suspense>
       </Router>

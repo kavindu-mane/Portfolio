@@ -1,17 +1,16 @@
 import React from "react";
 
-const Titles = ({ title }) => {
+const Titles = ({ titleStart, titleEnd }) => {
   return (
     <React.Fragment>
-      <a
-        href={"#" + title.toLowerCase()}
-        className="group ms-4 pb-5 text-center text-3xl font-bold text-slate-800 dark:text-slate-100 sm:pb-8 md:text-4xl"
+      <h1
+        data-aos="fade-down"
+        data-aos-duration="800"
+        className="my-10 text-center font-Poppins text-3xl font-semibold text-slate-800 dark:text-white md:text-4xl"
       >
-        {title}&ensp;
-        <span className="text-transparent duration-200 ease-in group-hover:text-sky-400">
-          #
-        </span>
-      </a>
+        {titleStart}
+        <span className="ms-2 text-primary-green">{titleEnd}</span>
+      </h1>
     </React.Fragment>
   );
 };

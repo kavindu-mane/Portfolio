@@ -1,5 +1,6 @@
 import React, { useState, lazy } from "react";
 import { CircularProgressBar } from "react-percentage-bar";
+import { BiPlus } from "react-icons/bi";
 const MultipleObserver = lazy(() => import("./MultipleObserver"));
 const Card = lazy(() => import("./Card"));
 
@@ -233,7 +234,6 @@ const Circular = () => {
     <React.Fragment>
       <h1 className="mb-10 text-3xl">Basic Usage</h1>
       <div className="grid gap-4 gap-y-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-        
         <Card
           current={length}
           showVal={1}
@@ -355,11 +355,7 @@ const Circular = () => {
           </MultipleObserver>
         </Card>
 
-        <Card 
-        current={length} 
-        showVal={1} 
-        text={codes.shadow} 
-        title={"Shadow"}>
+        <Card current={length} showVal={1} text={codes.shadow} title={"Shadow"}>
           <MultipleObserver>
             <CircularProgressBar shadow={true} />
           </MultipleObserver>
@@ -649,7 +645,9 @@ const Circular = () => {
         </Card>
       </div>
 
-      <h1 className={(length >= 4 ? "block" : "hidden") + " my-10 text-3xl"}>Advance Usage</h1>
+      <h1 className={(length >= 4 ? "block" : "hidden") + " my-10 text-3xl"}>
+        Advance Usage
+      </h1>
       <div className="grid gap-4 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
         <Card
           current={length}
@@ -782,7 +780,7 @@ const Circular = () => {
         }
         onClick={() => setLength((prev) => ++prev)}
       >
-        <span className="material-symbols-outlined">add</span>
+        <BiPlus className="relative"/>
       </button>
     </React.Fragment>
   );

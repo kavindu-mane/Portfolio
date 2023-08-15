@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { GoPaste } from "react-icons/go";
+import { MdDone } from "react-icons/md";
 
-const CodeArea = ({ value}) => {
+const CodeArea = ({ value }) => {
   const [copy, setCopy] = useState(false);
   return (
     <React.Fragment>
@@ -21,14 +23,12 @@ const CodeArea = ({ value}) => {
                 }, 3000);
               }}
             >
-              <span className="material-symbols-outlined scale-75">
-                content_paste
-              </span>
+              <GoPaste className="relative"/>
               Copy code
             </button>
           ) : (
             <button className="inline-flex items-center gap-1 py-1">
-              <span className="material-symbols-outlined scale-75">done</span>
+              <MdDone className="relative"/>
               Copied!
             </button>
           )}

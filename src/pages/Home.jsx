@@ -7,7 +7,7 @@ const DownloadBtn = lazy(() => import("../components/Common/DownloadBtn"));
 const NavigationIsland = lazy(() =>
   import("../components/Common/NavigationIslad")
 );
-const SocialIcons = lazy(() => import("../components/Homepage/SocialIcons"));
+const SocialIcons = lazy(() => import("../components/Home/SocialIcons"));
 const Header = lazy(() => import("../components/Common/Header"));
 const Gradient = lazy(() => import("../components/Common/Gradient"));
 
@@ -23,7 +23,12 @@ const Home = () => {
         <div className="flex h-full w-screen justify-center px-5 lg:h-auto">
           {/* image */}
           <div className="relative hidden lg:block lg:w-3/5 xl:w-1/2">
-            <img src={Me} alt="me" className="h-[90vh] object-cover" />
+            <img
+              src={Me}
+              alt="me"
+              className="h-[90vh] object-cover"
+              data-aos="fade-up"
+            />
             {/* middle matrix */}
             <img
               src={Matrix}
@@ -36,7 +41,7 @@ const Home = () => {
 
           {/* content */}
           <div className="flex h-full flex-col justify-center py-5 lg:w-2/5 xl:w-1/2">
-            <div className="relative text-secondary-blue">
+            <div className="relative text-secondary-blue" data-aos="fade-left">
               {/* hello text */}
               <h4 className="my-2 text-lg uppercase tracking-widest">hello,</h4>
 
@@ -112,12 +117,12 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* top blur effect */}
-      <Gradient />
-      {/* navigation island */}
-      <NavigationIsland />
+        {/* top blur effect */}
+        <Gradient />
+        {/* navigation island */}
+        <NavigationIsland />
+      </div>
     </React.Fragment>
   );
 };
