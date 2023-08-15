@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { PiHexagonLight } from "react-icons/pi";
-const SkillItems = lazy(() => import("../components/Skill/SkillItems"));
+import ProjectData from "../data/ProjectData";
+import images from "../data/ImageLoader";
 const NavigationIsland = lazy(() =>
   import("../components/Common/NavigationIslad")
 );
@@ -11,6 +12,7 @@ const GradientBottom = lazy(() =>
   import("../components/Common/GradientBottom")
 );
 const Titles = lazy(() => import("../components/Common/Titles"));
+const DetailsCard = lazy(() => import("../components/Projects/DetailsCard"));
 
 const Projects = () => {
   return (
@@ -23,10 +25,21 @@ const Projects = () => {
           <Titles titleStart={"My"} titleEnd={"Projects"} />
         </div>
         {/* content area */}
-        <div className="flex flex-col items-center justify-center px-10 pb-28">
-          <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-            
-          </div>
+        <div className="flex flex-wrap justify-center gap-10 px-10 pb-28 pt-16">
+          {ProjectData.map((project, key) => {
+            return (
+              <DetailsCard
+                key={key}
+                title={project.title}
+                image={images[project.image]}
+                description={project.description}
+                techStack={project.techStack}
+                githubLink={project.githubLink}
+                demoActive={project.demoActive}
+                demoLink={project.demoLink}
+              />
+            );
+          })}
         </div>
         {/* top gradient */}
         <Gradient />
