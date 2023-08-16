@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Tooltip } from "flowbite-react";
 import { HiHome, HiCode } from "react-icons/hi";
 import { BsFillSendFill } from "react-icons/bs";
-import { MdWork, MdFeedback } from "react-icons/md";
+import { MdWork } from "react-icons/md";
 
 const NavigationIsland = () => {
   const location = useLocation().pathname;
