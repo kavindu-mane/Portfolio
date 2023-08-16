@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "react-toastify/dist/ReactToastify.css";
 import ThemeSwitcher from "./data/ThemeSwitcher";
 const Skill = lazy(() => import("./pages/Skill"));
 const Projects = lazy(() => import("./pages/Projects"));
+const Contact = lazy(() => import("./pages/Contact"));
 const Home = lazy(() => import("./pages/Home"));
 const RPB = lazy(() =>
   import("./components/Projects/ReactProgressBar/ReactProgressBar")
@@ -20,6 +20,7 @@ const linkList = {
   "/projects/react-percentage-bar": <RPB />,
   "/skills":<Skill/>,
   "/projects":<Projects/>,
+  "/contact":<Contact/>,
   "*":<Error/>
 };
 

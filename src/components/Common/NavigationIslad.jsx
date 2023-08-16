@@ -47,10 +47,10 @@ const NavigationIsland = () => {
       icon: <MdWork />,
       link: "projects",
     },
-    {
-      icon: <MdFeedback />,
-      link: "feedback",
-    },
+    // {
+    //   icon: <MdFeedback />,
+    //   link: "feedback",
+    // },
     {
       icon: <BsFillSendFill />,
       link: "contact",
