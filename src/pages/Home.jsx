@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 import ReactTypingEffect from "react-typing-effect";
-import Me from "../assets/me.png";
+import Me from "../assets/me.webp";
 import Matrix from "../assets/matrix.svg";
 
 const DownloadBtn = lazy(() => import("../components/Common/DownloadBtn"));

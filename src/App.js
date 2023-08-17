@@ -59,7 +59,7 @@ function App() {
       <Router>
         <Suspense
           fallback={
-            <div className="relative flex h-screen w-screen items-center justify-center bg-slate-900">
+            <div className="relative overflow-hidden flex h-screen w-screen items-center justify-center bg-slate-900">
               <FaSpinner className="animate-spin text-7xl text-yellow-300" />
               <Gradient />
               <GradientBottom />
