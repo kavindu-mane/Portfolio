@@ -16,7 +16,7 @@ const GradientBottom = lazy(() =>
   import("../components/Common/GradientBottom")
 );
 const Titles = lazy(() => import("../components/Common/Titles"));
-const SocialIcons = lazy(() => import("../components/Home/SocialIcons"));
+const SocialIcons = lazy(() => import("../components/Common/SocialIcons"));
 
 const details = [
   {
@@ -212,7 +212,7 @@ const Contact = () => {
                 </div>
               );
             })}
-            <div className="flex items-center w-full -mt-8 dark:opacity-80">
+            <div className="-mt-8 flex w-full items-center dark:opacity-80">
               <SocialIcons />
             </div>
           </div>

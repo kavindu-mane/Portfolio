@@ -12,11 +12,10 @@ const SocialIcons = () => {
   return (
     <div>
       <div className="mt-10 flex">
-        {Object.keys(socilaList).map((key ,i) => {
-          return <SocialIcon icon={key} link={socilaList[key]} key={i} />;
+        {Object.keys(socilaList).map((key, i) => {
+          return <SocialIcon icon={key} link={socilaList[key]} key={i}/>;
         })}
       </div>
-      
     </div>
   );
 };

@@ -30,3 +30,7 @@
 .animation-delay {
   animation-delay: -2500ms;
 }
+
+img {
+  @apply select-none;
+}

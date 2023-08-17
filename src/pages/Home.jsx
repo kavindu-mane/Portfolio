@@ -7,7 +7,7 @@ const DownloadBtn = lazy(() => import("../components/Common/DownloadBtn"));
 const NavigationIsland = lazy(() =>
   import("../components/Common/NavigationIslad")
 );
-const SocialIcons = lazy(() => import("../components/Home/SocialIcons"));
+const SocialIcons = lazy(() => import("../components/Common/SocialIcons"));
 const Header = lazy(() => import("../components/Common/Header"));
 const Gradient = lazy(() => import("../components/Common/Gradient"));
 
@@ -26,7 +26,7 @@ const Home = () => {
             <img
               src={Me}
               alt="me"
-              className="h-[90vh] object-cover"
+              className="h-[90vh] w-auto object-cover select-none"
               data-aos="fade-up"
             />
             {/* middle matrix */}
@@ -36,7 +36,7 @@ const Home = () => {
               className="absolute start-0 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60 dark:opacity-40"
             />
             {/* blur effect */}
-            <div className="absolute start-[15%] top-1/3 -z-50 h-2/3 w-2/3 bg-primary-green opacity-60 blur-[500px] dark:opacity-30"></div>
+            <div className="absolute start-[15%] top-1/3 -z-50 h-2/3 w-2/3 bg-primary-green opacity-60 blur-[100px] dark:opacity-30"></div>
           </div>
 
           {/* content */}

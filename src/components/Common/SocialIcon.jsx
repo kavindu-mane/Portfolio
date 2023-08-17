@@ -21,7 +21,7 @@ const icons = {
 const SocialIcons = ({ link, icon }) => {
   return (
     <React.Fragment>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a href={link} target="_blank" rel="noopener noreferrer" aria-label={icon}>
         <div className="group me-4 rounded-md bg-transparent p-1 duration-200 ease-in hover:bg-primary-green border-2 border-primary-green">
           {icons[icon]}
         </div>

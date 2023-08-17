@@ -13,8 +13,6 @@ const RPB = lazy(() =>
   import("./components/Projects/ReactProgressBar/ReactProgressBar")
 );
 const Error = lazy(() => import("./pages/Error"));
-const Gradient = lazy(() => import("./components/Common/Gradient"));
-const GradientBottom = lazy(() => import("./components/Common/GradientBottom"));
 
 AOS.init();
 
@@ -59,10 +57,8 @@ function App() {
       <Router>
         <Suspense
           fallback={
-            <div className="relative overflow-hidden flex h-screen w-screen items-center justify-center bg-slate-900">
-              <FaSpinner className="animate-spin text-7xl text-yellow-300" />
-              <Gradient />
-              <GradientBottom />
+            <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden bg-slate-900">
+              <FaSpinner className="relative animate-spin text-7xl text-yellow-300" />
             </div>
           }
         >

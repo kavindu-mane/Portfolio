@@ -17,7 +17,7 @@ const NavigationIsland = () => {
         key={"key" + link}
         content={link === "" ? "Home" : titleCase(link)}
       >
-        <a data-tip="React-Tooltip" href={"/" + link}>
+        <a data-tip="React-Tooltip" href={"/" + link} aria-label={id}>
           <span
             id={id}
             className={
