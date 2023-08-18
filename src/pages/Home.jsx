@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import ReactTypingEffect from "react-typing-effect";
 import Me from "../assets/me.webp";
 import Matrix from "../assets/matrix.svg";
@@ -12,22 +12,38 @@ const Header = lazy(() => import("../components/Common/Header"));
 const Gradient = lazy(() => import("../components/Common/Gradient"));
 
 const Home = () => {
+  const [isImageActive, setIsImageActive] = useState(false);
+  const changeImageStatus = () => {
+    if (window.innerWidth >= 1024 && !isImageActive) {
+      setIsImageActive(true);
+    } else if (window.innerWidth < 1024 && isImageActive) {
+      setIsImageActive(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", changeImageStatus);
+    return () => window.removeEventListener("resize", changeImageStatus);
+  });
+
   return (
     <React.Fragment>
       {/* hero section  */}
-      <div className="flex h-screen min-h-[55rem] w-screen flex-col justify-between overflow-hidden">
+      <div className="flex h-screen min-h-[50rem] w-screen flex-col justify-between overflow-hidden lg:min-h-[40rem]">
         {/* header */}
         <Header />
 
         {/* image and content */}
         <div className="flex h-full w-screen justify-center px-5 lg:h-auto">
           {/* image */}
+          {isImageActive || window.innerWidth >= 1024 ? (
           <div className="relative hidden lg:block lg:w-3/5 xl:w-1/2">
             <img
               src={Me}
               alt="me"
-              className="h-[90vh] w-auto object-cover select-none"
+              className="h-[90vh] min-h-[35rem] w-full select-none object-cover"
               data-aos="fade-up"
+              height={1440}
+              width={500}
             />
             {/* middle matrix */}
             <img
@@ -38,6 +54,9 @@ const Home = () => {
             {/* blur effect */}
             <div className="absolute start-[15%] top-1/3 -z-50 h-2/3 w-2/3 bg-primary-green opacity-60 blur-[100px] dark:opacity-30"></div>
           </div>
+           ) : (
+            <></>
+          )}
 
           {/* content */}
           <div className="flex h-full flex-col justify-center py-5 lg:w-2/5 xl:w-1/2">
