@@ -55,10 +55,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_ykzdwcf",
-        "template_ajypl2p",
+        process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
         form.current,
-        "KTKs5BWTvCiEm-MOW"
+        process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -99,33 +99,33 @@ const Contact = () => {
             {/* line 1 */}
             <div className="flex w-full flex-col gap-x-5 sm:flex-row">
               {/* first name */}
-              <div class="relative mb-6 w-full">
+              <div className="relative mb-6 w-full">
                 <input
                   type="text"
                   id="fname"
                   name="fname"
-                  class="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
+                  className="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
                   required
                 />
                 <label
-                  for="fname"
-                  class="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
+                  htmlFor="fname"
+                  className="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
                 >
                   First name
                 </label>
               </div>
               {/* last name */}
-              <div class="relative mb-6 w-full">
+              <div className="relative mb-6 w-full">
                 <input
                   type="text"
                   id="lname"
                   name="lname"
-                  class="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
+                  className="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
                   required
                 />
                 <label
-                  for="lname"
-                  class="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
+                  htmlFor="lname"
+                  className="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
                 >
                   Last name
                 </label>
@@ -134,40 +134,40 @@ const Contact = () => {
             {/* line 2 */}
             <div className="flex w-full flex-col gap-x-5 sm:flex-row">
               {/* phone number */}
-              <div class="relative mb-6 w-full">
+              <div className="relative mb-6 w-full">
                 <input
                   type="text"
                   id="phone"
                   name="phone"
-                  class="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
+                  className="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
                   required
                 />
                 <label
-                  for="phone"
-                  class="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
+                  htmlFor="phone"
+                  className="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
                 >
                   Phone number
                 </label>
               </div>
               {/* email */}
-              <div class="relative mb-6 w-full">
+              <div className="relative mb-6 w-full">
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  class="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
+                  className="peer block w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
                   required
                 />
                 <label
-                  for="email"
-                  class="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
+                  htmlFor="email"
+                  className="absolute top-0 flex h-full items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
                 >
                   Email
                 </label>
               </div>
             </div>
             {/* line 3 */}
-            <div class="relative mb-6 w-full">
+            <div className="relative mb-6 w-full">
               <textarea
                 name="message"
                 id="message"
@@ -176,8 +176,8 @@ const Contact = () => {
                 className="peer w-full rounded-lg border border-sky-600 bg-transparent p-2.5 py-3 text-sm text-gray-900 focus:border-sky-500 focus:ring-0 dark:border-sky-500 dark:text-white"
               ></textarea>
               <label
-                for="message"
-                class="absolute top-0 flex h-12 items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
+                htmlFor="message"
+                className="absolute top-0 flex h-12 items-center ps-2 text-sm font-semibold italic text-gray-500 peer-valid:hidden peer-focus:hidden dark:text-gray-300"
               >
                 Message
               </label>
