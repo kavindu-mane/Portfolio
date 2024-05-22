@@ -6,7 +6,7 @@ const LogoArea = () => {
   return (
     <React.Fragment>
       <div
-        className="items-cente flex h-40 w-screen flex-col justify-center 
+        className="items-center flex h-40 w-screen flex-col justify-center 
         bg-gradient-to-r from-rose-700 to-purple-900 sm:h-60"
       >
         <div className="flex scale-50 flex-col items-center sm:scale-75">

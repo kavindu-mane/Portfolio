@@ -112,11 +112,10 @@ const Home = () => {
               <DownloadBtn />
               {/* social icons */}
               <SocialIcons />
-
-              {/* upper mattrix */}
+              {/* upper matrix */}
               <img
                 src={Matrix}
-                alt="upper mattrix"
+                alt="upper matrix"
                 className="absolute -start-40 -top-40 animate-upDown opacity-40 dark:opacity-30"
               />
 
